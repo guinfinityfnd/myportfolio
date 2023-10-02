@@ -9,7 +9,7 @@
     z-index: 0;
 }
 
-@media screen and (min-width:390px) {
+@media screen and (min-width:300px) {
     body{
         scroll-behavior: smooth;
         background-color: #95FFD2;
@@ -81,7 +81,7 @@
         padding-top: 25%;
     }
 
-    .sidebar>span>img{
+    #facebook,#messenger,#telegram,#discord{
         width: 50px;
         display: flex;
         flex-direction: column;
