@@ -1,11 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>skillsofme</title>
+    <style>
+        progress {
+            height: 50px;
+            width: 100%;
+        }
+
+        body {
+            background-color: aquamarine;
+        }
+
+        .container {
+            margin: 5% 0 0 0;
+        }
+
+        .box {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .frame {
+            margin-left: auto;
+            margin-right: auto;
+            width: 200px;
+            height: 200px;
+            background-color: aquamarine;
+            border: 3px solid #000;
+            perspective: 200px;
+            /* clip-path: polygon(101% 0%, 81% 44%, 100% 100%, 0 100%, 0 0);    */
+        }
+
+        .shape {
+            width: 200px;
+            height: 200px;
+            background-color: antiquewhite;
+            transition:all 3s ease;
+        }
+
+        .e {
+            transition:all 3s ease;
+            transform: rotateY(360deg);
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Hello</h1>
+    <div class="container">
+        <div class="box">
+            <a href="./index.html">
+                <img src="./photos/Vectorl.png" alt="back">
+            </a>
+            <h1>About of Me</h1>
+        </div>
+        <div class="C">
+            <h1>HTML,CSS,JAVASCRIPT</h1>
+            <progress max="100" value="70"></progress>
+        </div>
+        <div class="C">
+            <h1>PHP,MYSQL</h1>
+            <progress max="100" value="70"></progress>
+        </div>
+        <div class="C">
+            <h1>GIT,GITHUB</h1>
+            <progress max="100" value="60"></progress>
+        </div>
+        <div class="C">
+            <h1>PYTHON</h1>
+            <progress max="100" value="10"></progress>
+        </div>
+        <div class="frame">
+            <div class="shape">
+                <p style="text-align: center; margin: 0; padding: 30%;">I am running......</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        let shape = document.querySelector('.shape');
+
+        window.addEventListener("load", () => {
+            setInterval(() => {
+                shape.classList.add('e');
+            }, 2000);
+            setInterval(() => {
+                shape.classList.remove('e');
+            }, 5000);
+        });
+    </script>
 </body>
+
 </html>
