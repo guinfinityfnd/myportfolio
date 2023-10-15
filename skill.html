@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./photos/carbon (3).ico" type="image/x-icon">
     <title>skillsofme</title>
     <style>
         progress {
@@ -39,12 +40,17 @@
             width: 200px;
             height: 200px;
             background-color: antiquewhite;
-            transition:all 3s ease;
+            transition:all 2s ease;
         }
 
         .e {
             transition:all 3s ease;
-            transform: rotateY(360deg);
+            /* transform: rotateY(360deg); */
+            transform: translate(10px,10px);
+        }
+
+        #code{
+            box-shadow: -4px 36px 27px black;
         }
     </style>
 </head>
@@ -65,6 +71,11 @@
             <h1>PHP,MYSQL</h1>
             <progress max="100" value="70"></progress>
         </div>
+        <div class="frame">
+            <div class="shape">
+                <img id="code" src="./photos/carbon (3).png" alt="photos" width="100%">
+            </div>
+        </div>
         <div class="C">
             <h1>GIT,GITHUB</h1>
             <progress max="100" value="60"></progress>
@@ -72,11 +83,6 @@
         <div class="C">
             <h1>PYTHON</h1>
             <progress max="100" value="10"></progress>
-        </div>
-        <div class="frame">
-            <div class="shape">
-                <p style="text-align: center; margin: 0; padding: 30%;">I am running......</p>
-            </div>
         </div>
     </div>
     <script>

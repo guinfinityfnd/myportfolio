@@ -7,6 +7,15 @@ const f = document.querySelector('#facebook');
 const m = document.querySelector('#messenger');
 const t = document.querySelector('#telegram');
 const d = document.querySelector('#discord');
+// const welcome = document.querySelector('#welcome');
+
+
+// window.addEventListener('load',() => {
+//     welcome.style.display = "block";
+//     setTimeout(() => {
+//         welcome.style.display = "none";
+//     },2000);
+// });
 
 arrow_btn.addEventListener("click",()=>{
     // body.style.background = "#fff";
