@@ -6,41 +6,170 @@
     <link rel="shortcut icon" href="./photos/carbon (3).ico" type="image/x-icon">
     <title>Aboutofme</title>
     <style>
-        body{
-            background-color: aquamarine;
-        }
-        
-        .container {
-            margin: 5% 0 0 0;
-        }
+        @media screen and (min-width:300px) {
+            body{
+                user-select: none;
+                background-color: aquamarine;
+            }
 
-        .box{
-            display: flex;
-            justify-content: space-around;
-        }
+            .active_circle_color{
+                color: #ffffff;
+            }
+            
+            .container {
+                margin: 5% 0 0 0;
+            }
 
-        h1{
-            color: blue;
-        }
+            .box{
+                display: flex;
+                justify-content: space-around;
+            }
 
-        p{
-            font-family: Arial, Helvetica, sans-serif,system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            font-size: 2rem;
+            h1{
+                color: blue;
+            }
+
+            p{
+                font-family: Arial, Helvetica, sans-serif,system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                font-size: 2rem;
+            }
+
+            .desktop{
+                display: none;
+            }
+        }
+        @media screen and (min-width:1024px) {
+            body{
+                user-select: none;
+                background-color: #17AFD0;
+            }
+
+            .container {
+                margin: 1% 0 0 0;
+            }
+
+            .box{
+                display: flex;
+                justify-content: space-around;
+            }
+
+            .box>img{
+                display: flex;
+                justify-content: flex-end;
+            }
+
+            .box img{ 
+                display: none;
+            }
+
+            .box h1{
+                font-size: 5em;
+            }
+
+            p{
+                font-family: Arial, Helvetica, sans-serif,system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                font-size: 10em;
+                text-shadow: black 9px 13px;
+            }
+
+            .desktop>ul>li>a{
+                font-size: 3em;
+                text-decoration: none;
+                color: #fff;
+                background-color: rgb(0, 0, 0);
+                padding: 20px 60px;
+                border-radius: 20px;
+                -webkit-border-radius: 20px;
+                -moz-border-radius: 20px;
+                -ms-border-radius: 20px;
+                -o-border-radius: 20px;
+            }
+
+            #about_photo{
+                min-width: 50%;
+                border-radius: 20% 20% 20% 0;
+                /* box-shadow: 20px 3px red 1px; */
+                animation: test 1s infinite;
+            }
+
+            @keyframes test {
+                0%{
+                    transform: translateY(10px);
+                    transition: 1s ease-in-out;
+                }
+
+                10%{
+                    transform: translateY(20px);
+                    transition: 1s ease-in-out;
+                }
+
+                20%{
+                    transform: translateY(30px);
+                    transition: 2s ease-in-out;
+                }
+
+                30%{
+                    transform: translateY(40px);
+                    transition: 3s ease-in-out;
+                }
+
+                50%{
+                    transform: translateY(50px);
+                    transition: 3s ease-in-out;
+                }
+
+                60%{
+                    transform: translateY(40px);
+                    transition: 4s ease-in-out;
+                }
+
+                70%{
+                    transform: translateY(30px);
+                    transition: 5s ease-in-out;
+                }
+
+                80%{
+                    transform: translateY(20px);
+                    transition: 6s ease-in-out;
+                }
+
+                100%{
+                    transform: translateY(10px);
+                    transition: 4s ease-in-out;
+                }
+            }
+
+            .desktop{
+                display: block;
+            }
+
+            #for_desk{
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
+        <div class="desktop">
+            <ul>
+                <li><a href="./">Home</a></li>
+            </ul>
+        </div>
         <div class="box">
             <a href="./index.html">
                 <img src="./photos/Vectorl.png" alt="back">
             </a>
             <h1>About of Me</h1>
         </div>
-        <p>
-            Hello, I am ZAY, from Mandalay.I want to be the best programmer );, I am still learning about the programming such as web, app, and other I know.This is a few about of me ): Thanks...
-        </p>
-        <img src="./photos/undraw_In_the_office_re_jtgc.png" alt="photo" width="100%">
+        <div id="for_desk">
+            <p>
+                Hello, I am ZAY, from Mandalay.I want to be the best programmer );, I am still learning about the programming such as web, app, and other I know.This is a few about of me ): Thanks...
+            </p>
+                <img src="./photos/undraw_In_the_office_re_jtgc.png" alt="photo" width="100%" id="about_photo">
+        </div>
     </div>
 </body>
 </html>

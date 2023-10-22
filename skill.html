@@ -7,69 +7,161 @@
     <link rel="shortcut icon" href="./photos/carbon (3).ico" type="image/x-icon">
     <title>skillsofme</title>
     <style>
-        progress {
-            height: 50px;
-            width: 100%;
-        }
+        @media screen and (min-width:300px) {
+            progress {
+                height: 50px;
+                width: 100%;
+            }
 
-        body {
-            background-color: aquamarine;
-        }
+            body {
+                user-select: none;
+                background-color: aquamarine;
+            }
 
-        .container {
-            margin: 5% 0 0 0;
-        }
+            .container {
+                margin: 5% 0 0 0;
+            }
 
-        .box {
-            display: flex;
-            justify-content: space-around;
-        }
+            .box {
+                display: flex;
+                justify-content: space-around;
+            }
 
-        .frame {
-            margin-left: auto;
-            margin-right: auto;
-            width: 200px;
-            height: 200px;
-            background-color: aquamarine;
-            border: 3px solid #000;
-            perspective: 200px;
-            /* clip-path: polygon(101% 0%, 81% 44%, 100% 100%, 0 100%, 0 0);    */
-        }
+            .frame {
+                margin-left: auto;
+                margin-right: auto;
+                width: 200px;
+                height: 200px;
+                background-color: aquamarine;
+                border: 3px solid #000;
+                perspective: 200px;
+                /* clip-path: polygon(101% 0%, 81% 44%, 100% 100%, 0 100%, 0 0);    */
+            }
 
-        .shape {
-            width: 200px;
-            height: 200px;
-            background-color: antiquewhite;
-            transition:all 2s ease;
-        }
+            .shape {
+                width: 200px;
+                height: 200px;
+                background-color: antiquewhite;
+                transition:all 2s ease;
+            }
 
-        .e {
-            transition:all 3s ease;
-            /* transform: rotateY(360deg); */
-            transform: translate(10px,10px);
-        }
+            .active_circle_color{
+                color: #ffffff;
+            }
 
-        #code{
-            box-shadow: -4px 36px 27px black;
+            .e {
+                transition:all 3s ease;
+                /* transform: rotateY(360deg); */
+                transform: translate(10px,10px);
+            }
+
+            #code{
+                box-shadow: -4px 36px 27px black;
+            }
+
+            .circle,.desktop{
+                display: none;
+            }
+        }
+        @media screen and (min-width:1024px) {
+            body {
+                user-select: none;
+                background-color: #17AFD0;
+            }
+
+            .container{
+                margin: 1%;
+            }
+
+            #vector,.aboutofme{
+                display: none;
+            }
+
+            /* .desktop>ul{
+                display: flex;
+                justify-content: space-around;
+            } */
+
+            .desktop>ul>li>a{
+                font-size: 3em;
+                text-decoration: none;
+                color: #fff;
+                background-color: rgb(0, 0, 0);
+                padding: 20px 60px;
+                border-radius: 20px;
+                -webkit-border-radius: 20px;
+                -moz-border-radius: 20px;
+                -ms-border-radius: 20px;
+                -o-border-radius: 20px;
+            }
+            
+            .frame,.desktop {
+                display: block;
+            }
+
+            .shape {
+                width: 200px;
+                height: 200px;
+                background-color: antiquewhite;
+                transition:all 2s ease;
+            }
+
+            .active_circle_color{
+                color: #ffffff;
+            }
+
+            .e {
+                transition:all 3s ease;
+                transform: translate(10px,10px);
+            }
+
+            
+            #code{
+                box-shadow: -4px 36px 27px black;
+            }
+
+            .circle{
+                display: block;
+            }
+
+            /* #o, #t, #th, #f{
+                margin: 0 20px;
+                font-size: 200px;
+            } */
+
+            .C h1{
+                font-size: 5em;
+            }
+
+            progress{
+                block-size: 20em !important;
+            }
         }
     </style>
 </head>
-
 <body>
     <div class="container">
+        <!-- //for desktop// -->
+        <div class="desktop">
+            <ul>
+                <li><a href="./">Home</a></li>
+            </ul>
+        </div>
+            
+         <!-- //for desktop// -->
         <div class="box">
             <a href="./index.html">
-                <img src="./photos/Vectorl.png" alt="back">
+                <img src="./photos/Vectorl.png" alt="back" id="vector">
             </a>
-            <h1>About of Me</h1>
+            <h1 class="aboutofme">About of Me</h1>
         </div>
         <div class="C">
             <h1>HTML,CSS,JAVASCRIPT</h1>
-            <progress max="100" value="70"></progress>
+            <progress max="100" value="50" id="skill_one"></progress>
         </div>
         <div class="C">
             <h1>PHP,MYSQL</h1>
-            <progress max="100" value="70"></progress>
+            <progress max="100" value="40" class="skill_two"></progress>
         </div>
         <div class="frame">
             <div class="shape">
@@ -78,16 +170,23 @@
         </div>
         <div class="C">
             <h1>GIT,GITHUB</h1>
-            <progress max="100" value="60"></progress>
+            <progress max="100" value="50" class="skill_three"></progress>
         </div>
         <div class="C">
             <h1>PYTHON</h1>
-            <progress max="100" value="10"></progress>
+            <progress max="100" value="9" class="skill_four"></progress>
         </div>
+        <!-- <div class="circle">
+            <span id="o" class="active_circle_color">&#9675;</span>
+            <span id="t">&#9675;</span>
+            <span id="th">&#9675;</span>
+            <span id="f">&#9675;</span>
+        </div> -->
     </div>
     <script>
         let shape = document.querySelector('.shape');
-
+        // const url = window.location.pathname;
+        // console.log(url);
         window.addEventListener("load", () => {
             setInterval(() => {
                 shape.classList.add('e');

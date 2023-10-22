@@ -7,8 +7,12 @@ const f = document.querySelector('#facebook');
 const m = document.querySelector('#messenger');
 const t = document.querySelector('#telegram');
 const d = document.querySelector('#discord');
-// const welcome = document.querySelector('#welcome');
+// const welcome = document.querySelector('#welcome');\
+const drop_down = document.querySelector(".con");
+const drop_box = document.querySelector(".dropdownbox");
 
+const url = window.location.pathname;
+console.log(url);
 
 // window.addEventListener('load',() => {
 //     welcome.style.display = "block";
@@ -34,6 +38,11 @@ lessThan_arrow.addEventListener("click",()=>{
     sideBar.classList.remove("t_out");
     sideBar.classList.add("t_in");
     lessThan_arrow.style.display = "none";
+});
+
+drop_down.addEventListener('click',function() {
+    this.classList.toggle("open");
+    drop_box.classList.toggle("show_dropdownbox");
 });
 
 
