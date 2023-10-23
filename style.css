@@ -11,7 +11,7 @@
     z-index: 0;
 }
 
-@media screen and (min-width:300px) {
+@media screen and (max-width: 600px) {
     body{
         overflow-y: scroll;
         scroll-behavior: smooth;
@@ -160,25 +160,26 @@
     }
 }
 
-@media screen and (min-width:1024px) {
+@media screen and (min-width: 992px) {
     body{
         background-color: #17AFD0;
         /* overflow-y: hidden; */
     }
 
-    /* .container{
-        display: flex;
-        flex-direction: column;
-    } */
-
     .header{
         display: flex;
         justify-content: flex-end;
-        font-size: 3em;
+        font-size: 1.5em;
+    }
+
+    .greaterthan, .lessthan {
+        display: none;
     }
 
     .header>.my_h2{
         width: auto;
+        margin-right: 5%;
+        font-family: cursive;
     }
 
     #headerphoto{
@@ -197,18 +198,17 @@
         display: flex;
         align-items: center;
         position: relative;
-        font-size: 1.5em;
     }
 
     .greeting span{
-        font-size: 10em;
+        font-size: 3em;
         position: relative;
         display: inline-block;
         font-family: cursive;
         animation: motion 1s infinite;
         -webkit-animation: motion 1s  infinite;
         animation-delay: calc(.1s * var(--i));
-}
+    }
     
     @keyframes motion {
     
@@ -231,13 +231,17 @@
     .phonephoto{
         /* display: flex;
         flex-direction: column; */
-        min-width: 20%;
+        min-width: 21%;
         height: inherit;
         background-color: black;
-        border-radius: 100px;
+        border-radius: 20px;
         opacity: .9;
         box-shadow: 0 0 100px black;
-    }
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        -ms-border-radius: 20px;
+        -o-border-radius: 20px;
+}
 
     #parentofcirclerect{
         display: flex;
@@ -245,15 +249,15 @@
     }
 
     .circle {
-        width: 30px;
-        height: 30px;
+        width: 10px;
+        height: 10px;
         background-color: #fff;
         border-radius: 50%;
         -webkit-border-radius: 50%;
         -moz-border-radius: 50%;
         -ms-border-radius: 50%;
         -o-border-radius: 50%;
-        margin-top: 5%;
+        margin-top: 6%;
         opacity: .6;
 
     }
@@ -261,14 +265,14 @@
     .rectangle{
         margin-left: 40px;
         width: 40%;
-        height: 30px;
+        height: 10px;
         background-color: #fff;
         border-radius: 20px;
         -webkit-border-radius: 20px;
         -moz-border-radius: 20px;
         -ms-border-radius: 20px;
         -o-border-radius: 20px;
-        margin-top: 5%;
+        margin-top: 6%;
         opacity: .6;
     }
 
@@ -276,32 +280,24 @@
         overflow: hidden;
         width: 20%;
         text-align: center;
-        font-size: 3em;
+        font-size: 1em;
         color: #fff;
         position:absolute;
         top: 20%;
-    }
-
-    .active_circle_color{
-        color: #ffffff;
-    }
-
-    .header>img{
-        display: none;
-    }
+    }    
 
     .sidebar> .home{
         display: block;
     }
 
     .sidebar{
-        background: none;
-        min-width: 100%;
-        z-index: 0;
-        height: 100%;
+        /* background: green; */
+        min-width: 99%;
+        z-index: 1;
+        height: 10vh;
         position:absolute;
-        /* top: 0; */
-        margin: 1% 0 0 0;
+        top: 4%;
+        /* margin: 1% 0 0 0; */
         display: flex; 
         justify-content: space-evenly;
         transform: translateX(0%);
@@ -313,11 +309,12 @@
     }
 
     .sidebar>h2>a{
-        font-size: 3em;
+        font-size: 1em;
         text-decoration: none;
+        font-family: cursive;
         color: #fff;
         background-color: rgb(0, 0, 0);
-        padding: 20px 60px;
+        padding: 10px 20px;
         border-radius: 20px;
         -webkit-border-radius: 20px;
         -moz-border-radius: 20px;
@@ -327,14 +324,7 @@
 
     .con{
         color: #fff;
-        font-size: 3em;
-        /* background-color: rgb(0, 0, 0);
-        border-radius: 10px;
-        padding: 10px 30px;
-        -webkit-border-radius: 10px;
-        -moz-border-radius: 10px;
-        -ms-border-radius: 10px;
-        -o-border-radius: 10px; */
+        font-size: 1.5em;
     }
 
     .sidebar .about::before{
@@ -348,6 +338,7 @@
     .con, .skill, .about {
         padding: 0;
         height: 5vh;
+        font-family: cursive;
     }
 
     .con::after{
@@ -374,25 +365,14 @@
         display: none;
     }
 
-    .circle{
-        display: flex;
-        justify-content: center;
-    }
-
-    #o, #t, #th, #f{
-        margin: 0 20px;
-        font-size: 200px;
-    }
-
     .year{
         display: none;
     }
 
     .dropdownbox{
         display: none;
-        min-width: 15%;
-        position: absolute;
-        top: 6%;
+        position: fixed;
+        top: 74%;
     }
 
     .show_dropdownbox{
@@ -400,10 +380,16 @@
     }
 
     .dropdownbox li{
+        position: relative;
         list-style: none;
         background-color: #6fcaff;
-        margin: 5px;
-        padding:20px 0;
+        transition: 2s ease;
+        -webkit-transition: 2s ease;
+        -moz-transition: 2s ease;
+        -ms-transition: 2s ease;
+        -o-transition: 2s ease;
+        margin: 2px;
+        padding:10px;
         border-radius: 10px;
         -webkit-border-radius: 10px;
         -moz-border-radius: 10px;
@@ -413,27 +399,27 @@
 
     .dropdownbox li:hover{
         background-color: aqua;
-        transition: .1s ease-in-out;
-        transform: translate(30px,20px);
-        -webkit-transform: translate(30px,20px);
-        -moz-transform: translate(30px,20px);
-        -ms-transform: translate(30px,20px);
-        -o-transform: translate(30px,20px);
-        -webkit-transition: .1s ease-in-out;
-        -moz-transition: .1s ease-in-out;
-        -ms-transition: .1s ease-in-out;
-        -o-transition: .1s ease-in-out;
+        transition: .5s ease;
+        transform: translateX(10px);
+        -webkit-transform: translateX(10px);
+        -moz-transform: translateX(10px);
+        -ms-transform: translateX(10px);
+        -o-transform: translateX(10px);
+        -webkit-transition: .5s ease;
+        -moz-transition: .5s ease;
+        -ms-transition: .5s ease;
+        -o-transition: .5s ease;
     }   
 
     .dropdownbox li a{
         text-decoration: none;
-        font-size: 5em;
+        font-size: 1.5em;
         color:#001c21;
-        /* padding: 1% 1%; */
+        font-family: cursive;
     }
 
     .dropdownbox li img{
-        max-width: 5em;
+        max-width: 1.5em;
     }
 }
 

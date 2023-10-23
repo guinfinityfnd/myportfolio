@@ -7,7 +7,7 @@
     <link rel="shortcut icon" href="./photos/carbon (3).ico" type="image/x-icon">
     <title>skillsofme</title>
     <style>
-        @media screen and (min-width:300px) {
+        @media screen and (max-width: 600px) {
             progress {
                 height: 50px;
                 width: 100%;
@@ -63,36 +63,31 @@
                 display: none;
             }
         }
-        @media screen and (min-width:1024px) {
+        @media screen and (min-width: 992px) {
             body {
                 user-select: none;
                 background-color: #17AFD0;
-            }
-
-            .container{
-                margin: 1%;
             }
 
             #vector,.aboutofme{
                 display: none;
             }
 
-            /* .desktop>ul{
-                display: flex;
-                justify-content: space-around;
-            } */
-
             .desktop>ul>li>a{
-                font-size: 3em;
+                font-size: 1.5em;
                 text-decoration: none;
                 color: #fff;
                 background-color: rgb(0, 0, 0);
-                padding: 20px 60px;
+                padding: 10px 20px;
                 border-radius: 20px;
                 -webkit-border-radius: 20px;
                 -moz-border-radius: 20px;
                 -ms-border-radius: 20px;
                 -o-border-radius: 20px;
+            }
+
+            .desktop>ul>li::marker{
+                content: " ";
             }
             
             .frame,.desktop {
@@ -102,6 +97,9 @@
             .shape {
                 width: 200px;
                 height: 200px;
+                position: absolute;
+                top: 30%;
+                right: 20%;
                 background-color: antiquewhite;
                 transition:all 2s ease;
             }
@@ -120,21 +118,34 @@
                 box-shadow: -4px 36px 27px black;
             }
 
-            .circle{
-                display: block;
+            .parents{
+                display: flex;
+                justify-content: space-between;
             }
 
-            /* #o, #t, #th, #f{
-                margin: 0 20px;
-                font-size: 200px;
-            } */
+            .circle{
+                min-width: 50%;
+            }
+
+            #ws{
+                width: 100%;
+                height: 80vh;
+                border-radius: 50px;
+            }
+
+            .for_skill_progress_lines{
+                min-width: 50%;
+            }
 
             .C h1{
-                font-size: 5em;
+                font-size: 2em;
+                font-family: cursive, Arial, Helvetica, sans-serif;
+
             }
 
             progress{
-                block-size: 20em !important;
+                block-size: 2em !important;
+                width: 90%;
             }
         }
     </style>
@@ -155,6 +166,8 @@
             </a>
             <h1 class="aboutofme">About of Me</h1>
         </div>
+    <div class="parents">
+        <div class="for_skill_progress_lines">
         <div class="C">
             <h1>HTML,CSS,JAVASCRIPT</h1>
             <progress max="100" value="50" id="skill_one"></progress>
@@ -162,11 +175,6 @@
         <div class="C">
             <h1>PHP,MYSQL</h1>
             <progress max="100" value="40" class="skill_two"></progress>
-        </div>
-        <div class="frame">
-            <div class="shape">
-                <img id="code" src="./photos/carbon (3).png" alt="photos" width="100%">
-            </div>
         </div>
         <div class="C">
             <h1>GIT,GITHUB</h1>
@@ -176,15 +184,19 @@
             <h1>PYTHON</h1>
             <progress max="100" value="9" class="skill_four"></progress>
         </div>
-        <!-- <div class="circle">
-            <span id="o" class="active_circle_color">&#9675;</span>
-            <span id="t">&#9675;</span>
-            <span id="th">&#9675;</span>
-            <span id="f">&#9675;</span>
-        </div> -->
+    </div>
+        <div class="circle">
+            <img src="./photos/code_thinking.png" id="ws" alt="photo" title="Thinking to code...">
+            <div class="frame">
+                <div class="shape">
+                    <img id="code" src="./photos/carbon (3).png" alt="photos" width="100%">
+                </div>
+            </div>
+        </div>
+    </div>
     </div>
     <script>
-        let shape = document.querySelector('.shape');
+        let shape = document.querySelector('.shape')
         // const url = window.location.pathname;
         // console.log(url);
         window.addEventListener("load", () => {
