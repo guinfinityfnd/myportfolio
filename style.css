@@ -15,7 +15,7 @@
     body{
         overflow-y: scroll;
         scroll-behavior: smooth;
-        background-color: #95FFD2;
+        background-color: #000000;
         position: relative;
     }
 
@@ -61,8 +61,21 @@
     }
 
     #headerphoto{
-        width: 100%;
-        height: 50%;
+        width: 89%;
+        height: 40vh;
+        border-radius: 50%;
+        border: 2px solid rgb(0, 0, 0);
+        text-align: center;
+        position: relative;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%);
+        display: block;
+        box-shadow: 0px 0px 25px #95b4c9;
+    }
+
+    .greaterthan{
+        background: #fff;
     }
 
     #main_portphoto{
@@ -73,10 +86,11 @@
         /* text-align: center; */
         padding:0 20% 0 0;
         font-size: 2em;
-        color: #1400FF;
+        color: greenyellow;
     }
 
     .lessthan{
+        background: #fff;
         position: absolute;
         top: 0;
         left: 45%;
@@ -100,6 +114,8 @@
         text-align: center;
         font-size: 2em;
         font-weight: bolder;
+        color: greenyellow;
+        font-family: cursive, Arial, Helvetica, sans-serif;
     }
 
     .sidebar{
@@ -107,7 +123,7 @@
         font-size: large;
         transform: translateX(-100%);
         height: 100vh;
-        background-color: #aea4ff;
+        background-color: #00c3ff;
         position: fixed;
         z-index: 1;
         top: 0;
@@ -122,6 +138,16 @@
 
     .sidebar .skill::before{
         content: image-set('./photos/skill.png' 15x);
+    }
+
+    .about a{
+        color: #757575;
+        font-family: cursive;
+    }
+
+    .skill a{
+        color: #757575;
+        font-family: cursive;
     }
 
     .t_out{
@@ -221,6 +247,7 @@
 }
           20% {
             transform: translateY(-20px);
+            color: rgb(0, 172, 252);
             -webkit-transform: translateY(-20px);
             -moz-transform: translateY(-20px);
             -ms-transform: translateY(-20px);
@@ -414,6 +441,269 @@
     .dropdownbox li a{
         text-decoration: none;
         font-size: 1.5em;
+        color:#001c21;
+        font-family: cursive;
+    }
+
+    .dropdownbox li img{
+        max-width: 1.5em;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 990px) {
+    body{
+        background-color: #17AFD0;
+    }
+
+    .header{
+        display: flex;
+        justify-content: flex-end;
+        font-size: 1.2em;
+    }
+
+    .greaterthan, .lessthan {
+        display: none;
+    }
+
+    .header>.my_h2{
+        width: auto;
+        margin-right: 3%;
+        font-family: cursive;
+    }
+
+    #headerphoto{
+        display: none;
+    }
+
+    #main_portphoto{
+        display: flex;
+        justify-content: space-around;
+        position: relative;
+        height: 80vh;
+        /* background-color: rebeccapurple; */
+    }
+
+    .greeting {
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+
+    .greeting span{
+        font-size: 2em;
+        position: relative;
+        display: inline-block;
+        font-family: cursive;
+        animation: motion 1s infinite;
+        -webkit-animation: motion 1s  infinite;
+        animation-delay: calc(.1s * var(--i));
+    }
+    
+    @keyframes motion {
+    
+        0%,40%,100% {
+            transform: translateY(0);
+            -webkit-transform: translateY(0);
+            -moz-transform: translateY(0);
+            -ms-transform: translateY(0);
+            -o-transform: translateY(0);
+}
+          20% {
+            transform: translateY(-20px);
+            color: rgb(0, 172, 252);
+            -webkit-transform: translateY(-20px);
+            -moz-transform: translateY(-20px);
+            -ms-transform: translateY(-20px);
+            -o-transform: translateY(-20px);
+}
+    }
+
+    .phonephoto{
+        /* display: flex;
+        flex-direction: column; */
+        min-width: 31%;
+        height: inherit;
+        background-color: black;
+        border-radius: 20px;
+        opacity: .9;
+        box-shadow: 0 0 100px black;
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        -ms-border-radius: 20px;
+        -o-border-radius: 20px;
+}
+
+    #parentofcirclerect{
+        display: flex;
+        justify-content: center;
+    }
+
+    .circle {
+        width: 10px;
+        height: 10px;
+        background-color: #fff;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+        margin-top: 6%;
+        opacity: .6;
+
+    }
+    
+    .rectangle{
+        margin-left: 30px;
+        width: 40%;
+        height: 10px;
+        background-color: #fff;
+        border-radius: 20px;
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        -ms-border-radius: 20px;
+        -o-border-radius: 20px;
+        margin-top: 6%;
+        opacity: .6;
+    }
+
+    .phonescreentexts{
+        overflow: hidden;
+        width: 30%;
+        text-align: center;
+        font-size: .8em;
+        color: #fff;
+        position:absolute;
+        top: 20%;
+    }    
+
+    .sidebar> .home{
+        display: block;
+    }
+
+    .sidebar{
+        /* background: green; */
+        min-width: 99%;
+        z-index: 1;
+        height: 10vh;
+        position:absolute;
+        top: 4%;
+        /* margin: 1% 0 0 0; */
+        display: flex; 
+        justify-content: space-evenly;
+        transform: translateX(0%);
+        -webkit-transform: translateX(0%);
+        -moz-transform: translateX(0%);
+        -ms-transform: translateX(0%);
+        -o-transform: translateX(0%);
+        clip-path:none;
+    }
+
+    .sidebar>h2>a{
+        font-size: 1em;
+        text-decoration: none;
+        font-family: cursive;
+        color: #fff;
+        background-color: rgb(0, 0, 0);
+        padding: 5px 5px;
+        border-radius: 6px;
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        -ms-border-radius: 6px;
+        -o-border-radius: 6px;
+}
+
+    .con{
+        color: #fff;
+        font-size: 1.5em;
+    }
+
+    .sidebar .about::before{
+        content: none;
+    }
+
+    .sidebar .skill::before{
+        content: none;
+    }
+
+    .con, .skill, .about {
+        padding: 0;
+        height: 5vh;
+        font-family: cursive;
+    }
+
+    .con::after{
+        content: " \2BC6";
+        color: #000000;
+    }
+
+    .open::after {
+        content: " \2BC5";
+        color: #000000;
+        transform: rotate(180deg);
+        -webkit-transform: rotate(180deg);
+        -moz-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        -o-transform: rotate(180deg);
+
+    }
+
+    #mail,#facebook,#messenger,#telegram,#discord{
+        display: none;
+    }
+
+    #carbon, .footer, hr{
+        display: none;
+    }
+
+    .year{
+        display: none;
+    }
+
+    .dropdownbox{
+        display: none;
+        position: absolute;
+        top: 74%;
+    }
+
+    .show_dropdownbox{
+        display: block;
+    }
+
+    .dropdownbox li{
+        position: relative;
+        list-style: none;
+        background-color: #6fcaff;
+        transition: 2s ease;
+        -webkit-transition: 2s ease;
+        -moz-transition: 2s ease;
+        -ms-transition: 2s ease;
+        -o-transition: 2s ease;
+        margin: 2px;
+        padding:10px;
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+    }
+
+    .dropdownbox li:hover{
+        background-color: aqua;
+        transition: .5s ease;
+        transform: translateX(10px);
+        -webkit-transform: translateX(10px);
+        -moz-transform: translateX(10px);
+        -ms-transform: translateX(10px);
+        -o-transform: translateX(10px);
+        -webkit-transition: .5s ease;
+        -moz-transition: .5s ease;
+        -ms-transition: .5s ease;
+        -o-transition: .5s ease;
+    }   
+
+    .dropdownbox li a{
+        text-decoration: none;
+        font-size: 1em;
         color:#001c21;
         font-family: cursive;
     }
